@@ -1,4 +1,5 @@
 import nextId from 'react-id-generator';
+import { createTodo } from '../firebase/actions';
 
 export const createTodoStore = () => {
   return {
@@ -6,12 +7,20 @@ export const createTodoStore = () => {
     setTodos(data) {
       this.todos = data
     },
+
     addTodo(todo) {
-      this.todos.push({
+      // fireStoreCreateTodo to get the res id 
+      createTodo({ 
         todo,
-        id: nextId()
-      });
+       })
+        .then((res) =>{
+          this.todos.push({
+            id: res,
+            todo,
+          });
+        })
     },
+
     deleteTodo(todo) {
       this.todos = this.todos.filter(item => item.id !== todo.id)
     }

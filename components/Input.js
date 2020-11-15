@@ -11,8 +11,6 @@ const Input = () => {
 
   const handleTouch = () => {
     todoStore.addTodo(todo);
-    createTodo({ todo });
-    // console.log(toJS(todoStore))
   }
 
 
