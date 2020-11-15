@@ -8,10 +8,17 @@
     "eject": "expo eject"
   },
   "dependencies": {
+    "dotenv": "^8.2.0",
     "expo": "~39.0.2",
+    "expo-random": "^9.0.1",
     "expo-status-bar": "~1.0.2",
+    "firebase": "^8.0.1",
+    "mobx": "^6.0.3",
+    "mobx-react": "^7.0.4",
+    "nanoid": "^3.1.16",
     "react": "16.13.1",
     "react-dom": "16.13.1",
+    "react-id-generator": "^3.0.1",
     "react-native": "https://github.com/expo/react-native/archive/sdk-39.0.4.tar.gz",
     "react-native-web": "~0.13.12"
   },
