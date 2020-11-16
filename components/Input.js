@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import { Button, TextInput } from 'react-native';
 import { useTodoStore } from '../stores/TodoProvider';
 import { createTodo } from '../firebase/actions';
+import style from '../styles/style';
 
 const Input = () => {
   const [todo, setTodo] = useState('')
@@ -19,12 +20,13 @@ const Input = () => {
     <>
       
         <TextInput
-          style={{height: 40}}
+          style={style.input}
           placeholder='enter text here'
+          placeholderTextColor={'white'}
           onChangeText={todo => setTodo(todo)}         
         />
         <Button
-          color='black'
+          color='mediumseagreen'
           onPress={handleTouch}
           title='Add Todo'
         />

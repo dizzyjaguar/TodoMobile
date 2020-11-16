@@ -4,6 +4,8 @@ import { observer, useObserver } from 'mobx-react';
 import { Button, Text } from 'react-native';
 import { deleteTodo, getTodos } from '../firebase/actions';
 import { useTodoStore } from '../stores/TodoProvider';
+import style from '../styles/style';
+// import style from '../styles/style';
 
 
 const List = observer(() => {
@@ -14,7 +16,6 @@ const List = observer(() => {
         .then(data => todoStore.setTodos(data))
   }, [])
   
-  // if a todo is created right before we fetch to Firebase, then the corresponding Id per goal is different from when its just obtimistically generated for MobX, then a real ID gets assigned from Firebase, need to figure out how to address this.
   const handleTouch = (todo) => {
     todoStore.deleteTodo(todo)
     deleteTodo(todo.id);
@@ -25,9 +26,9 @@ const List = observer(() => {
   const todoNodes = todoStore.todos.map(todo => {
     return (
       <>
-      <Text>{todo.todo}</Text>
+      <Text style={style.todos}>{todo.todo}</Text>
       <Button
-        color='black'
+        color='palevioletred'
         onPress={() => handleTouch(todo)}
         title='Delete'
       />
