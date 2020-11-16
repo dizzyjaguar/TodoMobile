@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { toJS } from 'mobx';
 import { observer, useObserver } from 'mobx-react';
-import { Button, Text } from 'react-native';
+import { Button, Text, TouchableOpacity } from 'react-native';
 import { deleteTodo, getTodos } from '../firebase/actions';
 import { useTodoStore } from '../stores/TodoProvider';
 import style from '../styles/style';
@@ -27,11 +27,12 @@ const List = observer(() => {
     return (
       <>
       <Text style={style.todos}>{todo.todo}</Text>
-      <Button
-        color='palevioletred'
+      <TouchableOpacity
         onPress={() => handleTouch(todo)}
-        title='Delete'
-      />
+        style={style.deleteButton}
+        >
+        <Text style={style.deleteText}>Complete</Text>
+      </TouchableOpacity>
       </>
       )
   })

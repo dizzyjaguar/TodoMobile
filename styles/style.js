@@ -18,5 +18,17 @@ export default StyleSheet.create({
     fontWeight: 800,
     color: 'darkseagreen',
   },
+  deleteButton: {
+    height: 35,
+    width: 80,
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderRadius: 5,
+    backgroundColor: 'palevioletred'
+  },
+  deleteText: {
+    color: 'white',
+    fontWeight: 600,
+  }
   
 });
